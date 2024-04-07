@@ -114,9 +114,6 @@ public class MainActivity extends AppCompatActivity {
             return  null;
         }
 	}
-	
-	
-
 }
 /**
 import androidx.appcompat.app.AppCompatActivity;
