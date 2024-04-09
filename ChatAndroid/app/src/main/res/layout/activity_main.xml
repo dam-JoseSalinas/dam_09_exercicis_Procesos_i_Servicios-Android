@@ -25,7 +25,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mensajes de servidor" />
+        android:text="Mensajes de servidor"
+        android:onClick="enviar"/>
 
     <EditText
         android:layout_width="match_parent"
