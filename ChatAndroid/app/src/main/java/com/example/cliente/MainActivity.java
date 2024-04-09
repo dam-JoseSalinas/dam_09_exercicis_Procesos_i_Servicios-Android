@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Iniciar el hilo para recibir mensajes
         recibirThread = new RecibirMensajes();
-        recibirThread.execute();
+        recibirThread.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if(cajaEnviar.getText().toString().length() > 0) {
                     // Enviar el mensaje ingresado en el EditText
                     EnviarMensajes enviarThread = new EnviarMensajes();
-                    enviarThread.execute(cajaEnviar.getText().toString());
+                    enviarThread.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, cajaEnviar.getText().toString());
                 } else {
                     Toast.makeText(context, "Escribe mensaje", Toast.LENGTH_LONG).show();
                 }

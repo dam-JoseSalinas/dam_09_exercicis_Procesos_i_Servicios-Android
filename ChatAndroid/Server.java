@@ -40,7 +40,7 @@ public class Server {
 			try {
 				while (connected) {
 					String mensajeEntrada = (String) inputStream.readObject();
-					System.out.println("\nMENSAJE DE CLIENTE: " + mensajeEntrada);
+					System.out.print("\nMENSAJE DE CLIENTE: " + mensajeEntrada + "YO SERVIDOR: ");
 					if (mensajeEntrada.equals("fin")) {
 						outputStream.close();
 						inputStream.close();
@@ -59,9 +59,9 @@ public class Server {
 		@Override
 		public void run() {
 			try {
-				Scanner scanner = new Scanner(System.in);
 				while (connected) {
 					System.out.print("YO SERVIDOR: ");
+					Scanner scanner = new Scanner(System.in);
 					String mensajeSalida = scanner.nextLine();
 					outputStream.writeObject(mensajeSalida);
 					outputStream.flush();
